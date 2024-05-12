@@ -4,6 +4,8 @@ on: [push]
 jobs:
   testing-wf-commands:
    runs-on: ubuntu-latest
+   env:
+    MY_NAME: "Mona The Octocat"
    steps:
         #send a command from workflow to runner machine 
      - name: setting an error message
@@ -11,17 +13,23 @@ jobs:
      - name: setting an error message with params
        run:   echo "::error title=Error in file,file=app.js,line=2
               ,endLine=3,col=5,endColumn=7::Missing semicolon"
+    #setting debug message
      - name: setting an debug message with params
        run:   echo "::debug::Set the Octocat variable"
+    #setting notice message
      - name: setting an notice message with params
        run:   echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+    #setting Warning message   
      - name: setting an warning message with params
        run:   echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+    # Grouping log lines 
      - name: Group of log lines
        run: |
            echo "::group::My title"
            echo "Inside group"
            echo "::endgroup::"
+     - name: bash-version
+       run: echo "::add-mask::$MY_NAME"
 
 
      

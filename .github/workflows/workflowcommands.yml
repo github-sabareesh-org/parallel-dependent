@@ -11,3 +11,14 @@ jobs:
      - name: setting an error message with params
        run:   echo "::error title=Error in file,file=app.js,line=2
               ,endLine=3,col=5,endColumn=7::Missing semicolon"
+     - name: setting an debug message with params
+       run:   echo "::debug::Set the Octocat variable"
+     - name: setting an notice message with params
+       run:   echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+     - name: setting an warning message with params
+       run:   echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+
+
+     
+
+

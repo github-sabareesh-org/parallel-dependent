@@ -17,6 +17,11 @@ jobs:
        run:   echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
      - name: setting an warning message with params
        run:   echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+     - name: Group of log lines
+       run: |
+           echo "::group::My title"
+           echo "Inside group"
+           echo "::endgroup::"
 
 
      

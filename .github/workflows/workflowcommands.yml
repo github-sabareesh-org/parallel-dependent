@@ -5,6 +5,9 @@ jobs:
   testing-wf-commands:
    runs-on: ubuntu-latest
    steps:
+        #send a command from workflow to runner machine 
      - name: setting an error message
-    #send a command from workflow to runner machine 
        run: echo "::error::Missing a semicolon"
+     - name: setting an error message with params
+       run:   echo "::error title=Error in file,file=app.js,line=2
+              ,endLine=3,col=5,endColumn=7::Missing semicolon"

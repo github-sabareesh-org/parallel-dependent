@@ -11,3 +11,11 @@ jobs:
          echo $GITHUB_SHA             
          echo $GITHUB_REPOSITORY
          echo $GITHUB_WORKSPACE
+     # setting up in windows
+     -  name: Display working directory and LOF in Windows
+        run: |
+          Get-Location
+          dir
+          echo $env:GITHUB_SHA             
+          echo $env:GITHUB_REPOSITORY
+          echo $env:GITHUB_WORKSPACE

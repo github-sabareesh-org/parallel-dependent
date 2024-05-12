@@ -23,6 +23,6 @@ jobs:
       - name: echo a string
         run: Write-Output "Windows String"
       - name: error step
-        run: doesnotexists
+        run: Write-Outputs "Windows String fixed"
 
       

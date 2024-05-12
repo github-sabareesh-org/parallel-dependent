@@ -4,7 +4,7 @@ jobs:
   display-working-directory:
     runs-on: ubuntu-latest
     steps: 
-     - name: Display working directory and List of files
+     - name: Displays working directory and List of files
        run: |
          pwd
          ls -a

@@ -9,7 +9,7 @@ jobs:
          #uses:  actions/hello-world-javascript-action@main
          id: greet
          uses: actions/hello-world-javascript-action@v1.1
-         #action can also receive inputs by adding a key 
+         #action can also receive inputs by adding a keys 
          with:
             who-to-greet: sabareesh	
        - name: Greeting time

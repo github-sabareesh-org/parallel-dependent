@@ -1,5 +1,5 @@
 name: Repo Events
-on: [push,pull-request,issues]
+on: [push,pull_request,issues]
 jobs:
   chekout-lab-events:
     runs-on: ubuntu-latest

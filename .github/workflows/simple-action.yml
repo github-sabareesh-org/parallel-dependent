@@ -1,0 +1,16 @@
+name: Simple Action
+on: [push]
+
+jobs:
+ simple-action:
+    runs-on: ubuntu-latest
+    steps:
+       - name: simple js action  #instead of using, Run, where we can run commands,we need to use actions.
+         #uses:  actions/hello-world-javascript-action@main
+         id: greet
+         uses: actions/hello-world-javascript-action@v1.1
+         #action can also receive inputs by adding a key 
+         with:
+            who-to-greet: sabareesh	
+       - name: Greeting time
+         run: echo "{{steps.greet.outputs.time}}"

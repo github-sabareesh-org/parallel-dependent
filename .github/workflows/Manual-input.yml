@@ -24,10 +24,10 @@ on:
         description: A boolean option
         required: false
         type: boolean
-      environment:
-        description: "Environment"
-        type: environment
-        required: true
+      #environment:
+       # description: "Environment"
+        #type: environment
+        #required: true
 
 jobs:
   log-info:

@@ -1,0 +1,12 @@
+name: Event filters and Activity-PR-closed
+on:
+    pull_request: 
+        types: 
+           - closed
+        branches: 
+            - main
+jobs:
+    job-name:
+        runs-on: ubuntu-latest
+        steps:
+        - run: echo "Running wheneve PR closed"

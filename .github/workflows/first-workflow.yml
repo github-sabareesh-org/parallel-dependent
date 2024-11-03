@@ -8,11 +8,12 @@ jobs:
       run: echo "Hello world"
     - name: Multiline command 
       run: |
-        node -v
-        npm -v
+        node -version
+        npm -version
   #Run Parallel Job      
   parallel-job-macos:
     runs-on: macos-latest
+    needs: run-shell-commands
     steps:
       - name: View SW Version
         run: sw_vers

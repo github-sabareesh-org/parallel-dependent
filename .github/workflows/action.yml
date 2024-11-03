@@ -16,4 +16,5 @@ jobs:
     #install the dependency of our react
         - name: Install Dependecies
           run: npm ci  
+          working-directory: using-action/react-app
 # execute automated test  

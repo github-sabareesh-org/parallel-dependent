@@ -1,0 +1,11 @@
+name: Workflow_run
+# I would like to trigger it when our Repository Events workflow is completed
+on: 
+    workflow_run:
+        workflows: [Repo Events]
+        types: [completed]
+jobs:
+    echo-string:
+        runs-on: ubuntu-latest
+        steps:
+         - run: echo "I was triggered because 'Repo Events' was completed"

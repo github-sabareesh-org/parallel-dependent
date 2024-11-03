@@ -1,0 +1,37 @@
+name: Repo Events
+on: 
+    push:
+        branches: 
+            - main
+            - "!feature/abcde" #Exclude the Branch
+            - "feature"
+            - "feature/*" #matches feature/abc feature/cde but not feature/abc/ced
+            - "feature/**" #matches feature/abc feature/cde and feature/abc/ced
+            
+        #we need to run all the branches except
+        #branches-ignore: 
+        #    - dev
+        #    - uat
+        tags:
+            - v1.*
+            - "!v1.1.1"  #ignore a specific version
+        paths: 
+            - "**.js"
+            - "!app.js"
+
+    pull_request:
+        types: [opened,assigned,reopened,synchronize]
+        branches:
+            - main
+        paths:
+            - "**.js"
+    issues:
+        types: [opened]
+jobs:
+  chekout-lab-events:
+    runs-on: ubuntu-latest
+    steps:
+     - run: |
+         echo $GITHUB_SHA
+         echo $GITHUB_REF
+     - uses: actions/checkout@v3

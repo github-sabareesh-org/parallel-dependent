@@ -1,8 +1,12 @@
 name: action-project
 on: push
 jobs:
+    
     build:
       runs-on: ubuntu-latest
+      defaults:
+        run: 
+            working-directory: using-action/react-app
       steps:
         #checkout the code from the repo
         - name: checkout code
@@ -16,5 +20,7 @@ jobs:
     #install the dependency of our react
         - name: Install Dependecies
           run: npm ci  
-          working-directory: using-action/react-app
-# execute automated test  
+          # execute automated test 
+        - name: Run unit test
+          run: npm run test
+          

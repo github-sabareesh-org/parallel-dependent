@@ -19,7 +19,7 @@ jobs:
                  echo "Commit:${{github.sha}}"
                  echo "Runner OS:${{runner.os}}"
             - name: '[debug] Print when triggered from Mian'
-              if: ${{inputs.debug == true }}  && ${{github.ref == 'refs/heads/main'}}
+              if: ${{inputs.debug == true  && github.ref == 'refs/heads/main'}}
               run: echo "I triggered from main"
             - name: Hello
               run: echo "Hello world from Me!!"

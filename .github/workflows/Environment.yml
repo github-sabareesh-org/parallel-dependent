@@ -1,4 +1,4 @@
-name: working with environmets
+name: with environmets
 on:
     
     workflow_dispatch: 

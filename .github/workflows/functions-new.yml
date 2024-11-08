@@ -2,20 +2,20 @@ name: using function
 on:
     pull_request:
     workflow_dispatch: 
-jobs:
-    
+jobs:   
     echo1:
         runs-on: ubuntu-latest
         steps:
+            - name: sleep for 20 seconds
+              run: 
+                sleep 20
+              
             - name: Failing Step
-              run: exit 1
-            
+              run: exit 1     
             - name: I will be Skipped
               if: ${{success()}}
               run: |
                echo I will print if the previous step succeed
-            
-
             - name: I will execute
               if: ${{failure()}}
               run: |

@@ -20,7 +20,7 @@ jobs:
               run: |
                echo "Running tests...."
             - name: Failing tests
-              if: ${{github.event.inputs.pass-unit-test.value == 'false'}}
+              if: ${{!inputs.pass-unit-test}}
               run: exit 1
     deploy-nonprod:
         runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
         steps:
             - name: Deploying to Prod
               run: echo Deploying to Prod...
-                  
+
                       
                                  
 

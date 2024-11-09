@@ -7,7 +7,8 @@ jobs:
         strategy:
             matrix:
                 os: [winows-latest,ubuntu-latest]
-                node-js-vs: [12,  14,16]
+                node-js-vs: [12, 14, 16]  
+                 
         steps:
             - name: Setup-node
               run: node -v

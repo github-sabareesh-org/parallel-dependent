@@ -10,6 +10,8 @@ jobs:
                 node-js-vs: [12, 14, 16]  
                  
         steps:
+            - name: Check out repository
+              uses: actions/checkout@v2
             - name: Setup-node
               run: node -v
             - uses: actions/setup-node@v3

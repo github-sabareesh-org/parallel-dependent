@@ -1,0 +1,21 @@
+name: Matrix-example-1
+on:
+    push:
+jobs:
+    node-js-check:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                os: [winows-latest,ubuntu-latest]
+                node-js-vs: [12,  14,16]
+        steps:
+            - name: Setup-node
+              run: node -v
+            - uses: actions/setup-node@v3 
+              with:
+                  node-version: ${{matrix.node-js-vs}}
+            -   name: Install dependencies
+                run: npm install
+          
+            -     name: Run tests
+                  run: npm test                   

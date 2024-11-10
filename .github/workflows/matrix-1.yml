@@ -7,7 +7,10 @@ jobs:
         strategy:
             matrix:
                 os: [winows-latest,ubuntu-latest]
-                node-js-vs: [12, 14, 16]  
+                node-js-vs: [12, 14, 16]
+                include:
+                  - os: ubuntu-latest
+                    is-ubuntu: true  
                  
         steps:
             - name: Check out repository

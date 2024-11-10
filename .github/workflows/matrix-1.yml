@@ -12,7 +12,8 @@ jobs:
                   - os: ubuntu-latest
                     is-ubuntu: true  
                   - os: macos-latest
-                    node-js-vs: 15  
+                    node-js-vs: 15
+                  - experimental: false    
                  
         steps:
             - name: Check out repository

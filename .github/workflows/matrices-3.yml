@@ -11,6 +11,8 @@ jobs:
              animal: [cat, dog]
              include:
                    - color: green 
+                   - color: pink
+                     animal: cat
         steps:
             - name: Eho
               run: echo ${{matrix.fruit}}-${{matrix.animal}}

@@ -10,10 +10,15 @@ jobs:
                 node-js-vs: [12, 14, 16]
                 include:
                   - os: ubuntu-latest
-                    is-ubuntu: true  
+                    is-ubuntu: true 
                   - os: macos-latest
                     node-js-vs: 15
                   - experimental: false    
+                  - os: ubuntu-latest
+                    node-js-vs: 16
+                    experimental: true    
+
+
                  
         steps:
             - name: Check out repository

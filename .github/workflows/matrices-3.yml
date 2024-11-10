@@ -9,6 +9,8 @@ jobs:
             matrix:
              fruit: [apple, pear]
              animal: [cat, dog]
+             include:
+                   - color: green 
         steps:
             - name: Eho
               run: echo ${{matrix.fruit}}-${{matrix.animal}}

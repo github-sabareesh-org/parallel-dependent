@@ -3,6 +3,7 @@ on:
     push:
 jobs:
     node-js-check:
+        continue-on-error: false
 
         runs-on: ${{matrix.os}}
         strategy:
@@ -19,7 +20,7 @@ jobs:
                     node-js-vs: 16
                     experimental: true    
 
-
+            fail-fast: false
                  
         steps:
             - name: Check out repository

@@ -3,7 +3,8 @@ on:
     push:
 jobs:
     node-js-check:
-        runs-on: ubuntu-latest
+
+        runs-on: ${{matrix.os}}
         strategy:
             matrix:
                 os: [winows-latest,ubuntu-latest]

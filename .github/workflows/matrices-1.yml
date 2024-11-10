@@ -1,0 +1,18 @@
+name: Working-with-matrix
+on:
+    workflow_dispatch: 
+jobs:
+    backward-compatibility:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-vs: [18.x,20.x,21.x]
+                os: [ubuntu-latest, windows-latest]
+        name: ${{matrix.os}}-${{matrix.node-vs}}     
+        steps:
+            - name: Setup-node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{matrix.node-vs}}
+            - name: Perform-soeme-test
+              run: echo "Running tests on os ${{matrix.os}} and NodeJs ${{matrix.node-vs}}"

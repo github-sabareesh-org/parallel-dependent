@@ -1,4 +1,4 @@
-name: Working-with-matrix
+name: Working-with-matrix-config
 on:
     workflow_dispatch: 
 jobs:

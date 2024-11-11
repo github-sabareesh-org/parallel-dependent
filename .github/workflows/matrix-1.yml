@@ -5,7 +5,7 @@ jobs:
     node-js-check:
         continue-on-error: false
 
-        runs-on: ${{matrix.os}}
+        #runs-on: ${{matrix.os}}
         strategy:
             matrix:
                 os: [winows-latest,ubuntu-latest]
@@ -19,7 +19,7 @@ jobs:
                   - os: ubuntu-latest
                     node-js-vs: 16
                     experimental: true    
-                 
+        runs-on: ${{matrix.os}}     
         steps:
             - name: echo matrix
               run: echo ${{toJson(matrix)}}

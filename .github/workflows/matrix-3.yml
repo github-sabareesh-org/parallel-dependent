@@ -25,7 +25,7 @@ jobs:
               with:
                   node-version: ${{matrix.node-vs}}
             - name: Fail if Experimental
-              if: ${{matrix.tag == 'experimental'}}
+              if: matrix.tag == 'experimental'
               run: exit 1      
             - name: Perform-some-tests
               run: | 

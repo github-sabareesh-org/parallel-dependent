@@ -10,6 +10,11 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest]
         node-js-vs: [15, 16]
+        exclude:
+            - os: macos-latest
+              node-js-vs: 14
+            - os: macos-latest
+              node-js-vs: 15
         include:
           - os: ubuntu-latest
             is-ubuntu: true

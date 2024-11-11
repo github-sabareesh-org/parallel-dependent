@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Print matrix
-        run: echo ${{ toJson(matrix) }}
+        run: echo '${{ toJson(matrix) }}'
         
       - name: Setup Node.js
         uses: actions/setup-node@v3

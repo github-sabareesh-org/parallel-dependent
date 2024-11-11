@@ -5,7 +5,6 @@ jobs:
     node-js-check:
         continue-on-error: false
 
-        #runs-on: ${{matrix.os}}
         strategy:
             matrix:
                 os: [winows-latest,ubuntu-latest]

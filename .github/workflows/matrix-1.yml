@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        node-js-vs: [14, 15, 16]
+        node-js-vs: [15, 16]
         include:
           - os: ubuntu-latest
             is-ubuntu: true

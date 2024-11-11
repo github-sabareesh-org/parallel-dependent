@@ -1,0 +1,34 @@
+name: Working-with-matrix
+on:
+    workflow_dispatch: 
+jobs:
+    backward-compatibility:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-vs: [18.x,20.x,21.x]
+                os: [ubuntu-latest, windows-latest]
+                include:
+                    - os: ubuntu-latest
+                      node-vs: 16.x
+                      tag: experimental
+                    - os: ubuntu-latest
+                      node-vs: 21.x
+            fail-fast: false  
+
+        name: ${{matrix.os}}-${{matrix.node-vs}} 
+             
+        steps:
+            - name: Setup-node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{matrix.node-vs}}
+            - name: Fail if Experimental
+              if: ${{matrix.tag == 'experimental'}}
+              run: exit 1      
+            - name: Perform-some-tests
+              run: | 
+                echo "Running tests on os ${{matrix.os}} and NodeJs ${{matrix.node-vs}}"
+                sleep 10 
+            - name: upload test results
+              run: echo "uploading the test results"    

@@ -1,35 +1,27 @@
 name: Matrix-example-1
 on:
   push:
-
 jobs:
   node-js-check:
     continue-on-error: false
-
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, ubuntu-18.04]
-        node-js-vs: [15, 16]
-        
+        node-js-vs: [15, 16]      
         include:
           - os: ubuntu-latest
-            is-ubuntu: true
-          
+            is-ubuntu: true         
           - experimental: true
-  
           - os: ubuntu-latest
             node-js-vs: 16
             experimental: true
     runs-on: ${{ matrix.os }}
-
     steps:
       - name: Print matrix
-        run: echo '${{ toJson(matrix) }}'
-        
+        run: echo '${{ toJson(matrix) }}'     
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-js-vs }}
-        
+          node-version: ${{ matrix.node-js-vs }}      
       - name: Verify Node.js version
         run: node -v

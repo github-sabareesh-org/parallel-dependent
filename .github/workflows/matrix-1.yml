@@ -8,14 +8,13 @@ jobs:
 
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        os: [windows-latest, ubuntu-latest, ubuntu-18.04]
         node-js-vs: [15, 16]
         
         include:
           - os: ubuntu-latest
             is-ubuntu: true
-          - os: ubuntu-18.04
-            node-js-vs: 15
+          
           - experimental: true
   
           - os: ubuntu-latest

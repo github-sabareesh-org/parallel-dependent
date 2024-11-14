@@ -16,7 +16,7 @@ jobs:
                       experimental: true  
                     - os: ubuntu-latest
                       node-js-vs: 17
-            fail-fast: true         
+            fail-fast: false      
         runs-on: ${{matrix.os}}                  
         steps:
           - if: matrix.experimental==true

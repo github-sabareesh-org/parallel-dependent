@@ -10,15 +10,12 @@ jobs:
                 os: [ubuntu-latest, windows-latest]
                 include:
                     - os: ubuntu-latest
-                      node-vs: 16.x
-                      
+                      node-vs: 16.x                    
                     - os: ubuntu-latest
                       node-vs: 21.x
                       tag: experimental
             fail-fast: false  
-
-        name: ${{matrix.os}}-${{matrix.node-vs}} 
-             
+        name: ${{matrix.os}}-${{matrix.node-vs}}            
         steps:
             - name: Setup-node
               uses: actions/setup-node@v3

@@ -1,0 +1,15 @@
+name: outsputs
+on: push
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    outputs:
+     name: ${{steps.step1.outputs.NAME}}
+    steps:
+        - id: step1
+          run: echo "NAME=Sabareesh" >> "$GITHUB_OUTPUT"
+  goodbye:
+    runs-on: ubuntu-latest
+    needs: welcome
+    steps:
+      - run: echo "Bye, ${{needs.welcome.outputs.name}}"      

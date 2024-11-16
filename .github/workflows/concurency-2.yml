@@ -1,0 +1,17 @@
+name: concurency-2
+run-name: concurency-2 (${{inputs.environment}})
+on:
+    workflow_dispatch: 
+        inputs:
+            environment:
+                type: environment
+                description: "Environment"
+                required: true
+concurrency: 
+    group: ${{inputs.environment}}
+    cancel-in-progress: true
+jobs:
+    sleep:
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep 30

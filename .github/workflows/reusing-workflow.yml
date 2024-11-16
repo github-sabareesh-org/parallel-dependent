@@ -1,0 +1,16 @@
+name: Calling reusable workflows
+on:
+    workflow_dispatch: 
+        inputs:
+            name:
+                description: "Input Description"
+                type: string
+                default: "Sabareesh"
+                required: false
+jobs:
+    calling-a-resuable:
+        uses: github-sabareesh-org/reusable-workflow/.github/workflows/reusable.yml@main
+        with:
+            name: ${{inputs.name}}
+        secrets: 
+            access-token: ${{secrets.ACCESS_PASSWORD}}    

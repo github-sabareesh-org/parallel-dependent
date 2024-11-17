@@ -1,0 +1,24 @@
+{
+  "name": "parallel-dependent-flow",
+  "version": "1.0.0",
+  "description": "This is a readme file\r This is PR CLosed",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github-sabareesh-org/parallel-dependent.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/github-sabareesh-org/parallel-dependent/issues"
+  },
+  "homepage": "https://github.com/github-sabareesh-org/parallel-dependent#readme",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
+  }
+}
